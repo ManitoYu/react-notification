@@ -1,0 +1,58 @@
+.Notification {
+  width: 100%;
+  padding: 1.5rem;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 5px 8px 0 rgba(0, 0, 0, .14), 0 1px 14px 0 rgba(0, 0, 0, .12);
+  color: #fff;
+  overflow: hidden;
+  animation: flash 3s ease-out;
+  animation-fill-mode: both;
+
+  &--error {
+    background-color: #FF5252;
+  }
+
+  &--info {
+    background-color: #41ccef;
+  }
+
+  &-icon {
+    width: 40px;
+    float: left;
+    padding: 2px 0;
+  }
+
+  &-text {
+    margin-left: 72px;
+
+    h4 {
+      font-size: 16px;
+      margin-bottom: .25rem;
+    }
+
+    p {
+      word-wrap: break-word;
+    }
+  }
+
+  & + .Notification {
+    margin-top: 1rem;
+  }
+
+  @keyframes flash {
+    0% {
+      transform: translateX(150%);
+      opacity: 0;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    70% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
